@@ -36,11 +36,11 @@
         <tr>
 
             <td align="center">${status.count}</td>
-            <td><input  name="xmls[${status.index}].id" value="${kantarXml.id}"/></td>
-            <td><input  name="xmls[${status.index}].source" value="${kantarXml.source}"/></td>
-            <td><input  name="xmls[${status.index}].issue" value="${kantarXml.issue}"/></td>
-            <td><input  name="xmls[${status.index}].date_issue" value="${kantarXml.date_issue}"/></td>
-            <td><input  name="xmls[${status.index}].page" value="${kantarXml.page}"/></td>
+            <td><input readonly name="xmls[${status.index}].id" value="${kantarXml.id}"/></td>
+            <td><input readonly name="xmls[${status.index}].source" value="${kantarXml.source}"/></td>
+            <td><input readonly name="xmls[${status.index}].issue" value="${kantarXml.issue}"/></td>
+            <td><input readonly name="xmls[${status.index}].date_issue" value="${kantarXml.date_issue}"/></td>
+            <td><input readonly name="xmls[${status.index}].page" value="${kantarXml.page}"/></td>
         </tr>
         <th>info</th>
         <th>title</th>
