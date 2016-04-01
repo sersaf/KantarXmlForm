@@ -94,33 +94,71 @@
                 <form:label path="xmls[0].date">date</form:label>
                 <input name="xmls[0].date" value="${kantarXml.date}" type="text"  placeholder="18.03.2016" required />
             </li>
-        </ul>
-    <table width="50%">
+
         <c:forEach items="${kantarXmlForm.xmls}" var="kantarXml" varStatus="status">
-            <tr>
+
 
                 ${status.count}
-                <td> <input name="xmls[${status.index}].id" value="${kantarXml.id}" placeholder="John Doe" required/></td>
-                <td><input name="xmls[${status.index}].source" value="${kantarXml.source}"/></td>
-                <td><input name="xmls[${status.index}].issue" value="${kantarXml.issue}"/></td>
-                <td><input name="xmls[${status.index}].date_issue" value="${kantarXml.date_issue}"/></td>
-                <td><input name="xmls[${status.index}].page" value="${kantarXml.page}"/></td>
-            </tr>
-            <th>info</th>
-            <th>title</th>
-            <th>body</th>
-            <th>summary</th>
-            <th>pdf_url</th>
-            <tr>
-                <td><input name="xmls[${status.index}].info" value="${kantarXml.info}"/></td>
-                <td><input name="xmls[${status.index}].title" value="${kantarXml.title}"/></td>
-                <td><input name="xmls[${status.index}].body" value="${kantarXml.body}"/></td>
-                <td><input name="xmls[${status.index}].summary" value="${kantarXml.summary}"/></td>
-                <td><input name="xmls[${status.index}].pdf_url" value="${kantarXml.pdf_url}"/></td>
-            </tr>
+           <li>
+               <form:label path="xmls[${status.index}].id">id</form:label>
+               <input name="xmls[${status.index}].id" value="${kantarXml.id}" placeholder="123" required/>
+           </li>
+
+            <li>
+                <form:label path="xmls[${status.index}].source">source</form:label>
+                <input name="xmls[${status.index}].source" value="${kantarXml.source}" placeholder="Komersant"/>
+            </li>
+
+            <li>
+                <form:label path="xmls[${status.index}].issue">issue</form:label>
+                <input name="xmls[${status.index}].issue" value="${kantarXml.issue}" placeholder="4"/>
+            </li>
+
+            <li>
+                <form:label path="xmls[${status.index}].issue">issue</form:label>
+                <input name="xmls[${status.index}].issue" value="${kantarXml.issue}" placeholder="4"/>
+            </li>
+
+            <li>
+                <form:label path="xmls[${status.index}].issue">date_issue</form:label>
+                <input name="xmls[${status.index}].date_issue" value="${kantarXml.date_issue}" placeholder="24-02"/>
+            </li>
+
+            <li>
+                <form:label path="xmls[${status.index}].page">page</form:label>
+                <input name="xmls[${status.index}].date_issue" value="${kantarXml.page}" placeholder="24"/>
+            </li>
+
+
+            <li>
+                <form:label path="xmls[${status.index}].info">info</form:label>
+                <input name="xmls[${status.index}].info" value="${kantarXml.info}"/>
+            </li>
+
+            <li>
+                <form:label path="xmls[${status.index}].title">title</form:label>
+                <input name="xmls[${status.index}].title" value="${kantarXml.title}"/>
+            </li>
+
+            <li>
+                <form:label path="xmls[${status.index}].body">body</form:label>
+                <input name="xmls[${status.index}].body" value="${kantarXml.body}" placeholder="body"/>
+            </li>
+
+            <li>
+                <form:label path="xmls[${status.index}].summary">summary</form:label>
+                <textarea name="xmls[${status.index}].summary" value="${kantarXml.summary}" cols="30" rows="3" required ></textarea>
+            </li>
+
+            <li>
+                <form:label path="xmls[${status.index}].pdf_url">pdf_url</form:label>
+                <input name="xmls[${status.index}].pdf_url" value="${kantarXml.pdf_url}" placeholder="pdf_url" required/>
+            </li>
+
+            </ul>
 
         </c:forEach>
-    </table>
+
     <br/>
     <input type="submit" value="Save" />
     <input type="button" value="Добавить поле" id="add" onclick="return add_new_image();">
