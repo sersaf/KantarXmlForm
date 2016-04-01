@@ -76,37 +76,35 @@
 
 
 
-<form:form method="post" action="save" modelAttribute="kantarXmlForm">
+<form:form class="contact_form" method="post" action="save" modelAttribute="kantarXmlForm">
+
+        <h2>Contact Us</h2>
+        <span class="required_notification">* Denotes Required Field</span>
+
+        <ul class="same">
+            <li>
+                <form:label path="xmls[0].order_id">order_id</form:label>
+                <input name="xmls[0].order_id" value="${kantarXml.order_id}" type="text"  placeholder="181914" required />
+            </li>
+            <li>
+                <form:label path="xmls[0].country">country</form:label>
+                <input name="xmls[0].country" value="${kantarXml.country}" type="text"  placeholder="Russia" required />
+            </li>
+            <li>
+                <form:label path="xmls[0].date">date</form:label>
+                <input name="xmls[0].date" value="${kantarXml.date}" type="text"  placeholder="18.03.2016" required />
+            </li>
+        </ul>
     <table width="50%">
-        <tr>
-            <th>order_id</th>
-            <th>country</th>
-            <th>date</th>
-        </tr>
-        <tr>
-            <td><input  name="xmls[0].order_id" value="${kantarXml.order_id}"/></td>
-            <td><input  name="xmls[0].country" value="${kantarXml.country}"/></td>
-            <td><input  name="xmls[0].date" value="${kantarXml.date}"/></td>
-        </tr>
-
-        <tr>
-            <th>No.</th>
-            <th>id</th>
-            <th>source</th>
-            <th>issue</th>
-            <th>date_issue</th>
-            <th>page</th>
-        </tr>
-
         <c:forEach items="${kantarXmlForm.xmls}" var="kantarXml" varStatus="status">
             <tr>
 
-                <td align="center">${status.count}</td>
-                <td><input  name="xmls[${status.index}].id" value="${kantarXml.id}"/></td>
-                <td><input  name="xmls[${status.index}].source" value="${kantarXml.source}"/></td>
-                <td><input  name="xmls[${status.index}].issue" value="${kantarXml.issue}"/></td>
-                <td><input  name="xmls[${status.index}].date_issue" value="${kantarXml.date_issue}"/></td>
-                <td><input  name="xmls[${status.index}].page" value="${kantarXml.page}"/></td>
+                ${status.count}
+                <td> <input name="xmls[${status.index}].id" value="${kantarXml.id}" placeholder="John Doe" required/></td>
+                <td><input name="xmls[${status.index}].source" value="${kantarXml.source}"/></td>
+                <td><input name="xmls[${status.index}].issue" value="${kantarXml.issue}"/></td>
+                <td><input name="xmls[${status.index}].date_issue" value="${kantarXml.date_issue}"/></td>
+                <td><input name="xmls[${status.index}].page" value="${kantarXml.page}"/></td>
             </tr>
             <th>info</th>
             <th>title</th>
@@ -114,11 +112,11 @@
             <th>summary</th>
             <th>pdf_url</th>
             <tr>
-                <td><input readonly name="xmls[${status.index}].info" value="${kantarXml.info}"/></td>
-                <td><input readonly name="xmls[${status.index}].title" value="${kantarXml.title}"/></td>
-                <td><input readonly name="xmls[${status.index}].body" value="${kantarXml.body}"/></td>
-                <td><input readonly name="xmls[${status.index}].summary" value="${kantarXml.summary}"/></td>
-                <td><input readonly name="xmls[${status.index}].pdf_url" value="${kantarXml.pdf_url}"/></td>
+                <td><input name="xmls[${status.index}].info" value="${kantarXml.info}"/></td>
+                <td><input name="xmls[${status.index}].title" value="${kantarXml.title}"/></td>
+                <td><input name="xmls[${status.index}].body" value="${kantarXml.body}"/></td>
+                <td><input name="xmls[${status.index}].summary" value="${kantarXml.summary}"/></td>
+                <td><input name="xmls[${status.index}].pdf_url" value="${kantarXml.pdf_url}"/></td>
             </tr>
 
         </c:forEach>
