@@ -28,11 +28,10 @@ public class LoginController {
 	private static final Logger logger = LoggerFactory.getLogger(LoginController.class);
 	private static List<KantarXml> kantarXmls = new ArrayList<KantarXml>();
 	static {
-		kantarXmls.add(new KantarXml("Barack", "Obama","Obama","Obama","Obama","Obama","Obama","Obama","Obama","Obama",
-				"Obama","Obama","Obama"));
-//		kantarXmls.add(new KantarXml("George", "Bush"));
-//		kantarXmls.add(new KantarXml("Bill", "Clinton"));
-//		kantarXmls.add(new KantarXml("Ronald", "Reagan"));
+		kantarXmls.add(new KantarXml("12", "Elle","5","24-02","124","info","title","body","summury","pdf",
+				"123","Russia","1994-02-24"));
+//		kantarXmls.add(new KantarXml("12", "Elle","5","24-02","124","info","title","body","summury","pdf",
+//				"","",""));
 	}
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)

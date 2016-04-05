@@ -52,6 +52,7 @@ public class ConstructorsForXML {
 
         Document doc=builder.newDocument();
         Element RootElementNews = doc.createElement("NEWS");
+        doc.appendChild(RootElementNews);
 
         Element NameElementOrder_id = doc.createElement("order_id");
         NameElementOrder_id.appendChild(doc.createTextNode(xmls.get(0).getOrder_id()));
@@ -67,51 +68,50 @@ public class ConstructorsForXML {
 
         for (KantarXml xml : xmls) {
 
-//            Element RootElementArticle = doc.createElement("Article");
+            Element RootElementArticle = doc.createElement("Article");
+            RootElementNews.appendChild(RootElementArticle);
 
             Element NameElementId = doc.createElement("id");
             NameElementId.appendChild(doc.createTextNode(xml.getId()));
-            RootElementNews.appendChild(NameElementId);
+            RootElementArticle.appendChild(NameElementId);
 
             Element NameElementCompile = doc.createElement("source");
             NameElementCompile.appendChild(doc.createTextNode(xml.getSource()));
-            RootElementNews.appendChild(NameElementCompile);
+            RootElementArticle.appendChild(NameElementCompile);
 
             Element NameElementIssue = doc.createElement("issue");
             NameElementIssue.appendChild(doc.createTextNode(xml.getIssue()));
-            RootElementNews.appendChild(NameElementIssue);
+            RootElementArticle.appendChild(NameElementIssue);
 
             Element NameElementDate_Issue = doc.createElement("date_issue");
             NameElementDate_Issue.appendChild(doc.createTextNode(xml.getDate_issue()));
-            RootElementNews.appendChild(NameElementDate_Issue);
+            RootElementArticle.appendChild(NameElementDate_Issue);
 
             Element NameElementPage = doc.createElement("page");
             NameElementPage.appendChild(doc.createTextNode(xml.getPage()));
-            RootElementNews.appendChild(NameElementPage);
+            RootElementArticle.appendChild(NameElementPage);
 
             Element NameElementInfo = doc.createElement("info");
             NameElementInfo.appendChild(doc.createTextNode(xml.getInfo()));
-            RootElementNews.appendChild(NameElementInfo);
+            RootElementArticle.appendChild(NameElementInfo);
 
             Element NameElementTitle = doc.createElement("title");
             NameElementTitle.appendChild(doc.createTextNode(xml.getTitle()));
-            RootElementNews.appendChild(NameElementTitle);
+            RootElementArticle.appendChild(NameElementTitle);
 
             Element NameElementBody = doc.createElement("body");
             NameElementBody.appendChild(doc.createTextNode(xml.getTitle()));
-            RootElementNews.appendChild(NameElementBody);
+            RootElementArticle.appendChild(NameElementBody);
 
             Element NameElementSummary = doc.createElement("summary");
             NameElementSummary.appendChild(doc.createTextNode(xml.getTitle()));
-            RootElementNews.appendChild(NameElementSummary);
+            RootElementArticle.appendChild(NameElementSummary);
 
             Element NameElementPdf_Url = doc.createElement("pdf_url");
             NameElementPdf_Url.appendChild(doc.createTextNode(xml.getTitle()));
-            RootElementNews.appendChild(NameElementPdf_Url);
+            RootElementArticle.appendChild(NameElementPdf_Url);
 
-//            doc.appendChild(RootElementArticle);
         }
-        doc.appendChild(RootElementNews);
 
         SavetoFile(doc);
 
@@ -121,6 +121,6 @@ public class ConstructorsForXML {
         Transformer t=TransformerFactory.newInstance().newTransformer();
         t.setOutputProperty(OutputKeys.METHOD, "xml");
         t.setOutputProperty(OutputKeys.INDENT, "yes");
-        t.transform(new DOMSource(doc), new StreamResult(new FileOutputStream("/home/sersaf/proxy.xml")));
+        t.transform(new DOMSource(doc), new StreamResult(new FileOutputStream("/Users/sergejsafonov/proxy.xml")));
     }
 }

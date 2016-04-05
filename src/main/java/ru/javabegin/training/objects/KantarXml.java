@@ -1,9 +1,8 @@
 package ru.javabegin.training.objects;
 
-
-
 public class KantarXml {
     private String id;
+
     private String source;
     private String issue;
     private String date_issue;
