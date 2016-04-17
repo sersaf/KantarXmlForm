@@ -50,7 +50,7 @@ var maxFieldLimit = 25; // Максимальное число возможны�
     newitem += '<input id=\"xmls[' + curFieldNameId + '].body\" name=\"xmls[' + curFieldNameId + '].body\" placeholder=\"body\" />';
 
     newitem +='<label for=\"xmls[' + curFieldNameId + '].summary\" path=\"xmls[' + curFieldNameId + '].summary\"></label>';
-    newitem += '<textarea id=\"xmls[' + curFieldNameId + '].summary\" name=\"xmls[' + curFieldNameId + '].summary\" cols=\"30\" rows=\"3\" placeholder=\"summary\" required ></textarea>';
+    newitem += '<textarea id=\"xmls[' + curFieldNameId + '].summary\" name=\"xmls[' + curFieldNameId + '].summary\" cols=\"30\" rows=\"3\" placeholder=\"summary\" ></textarea>';
 
     newitem +='<label for=\"xmls[' + curFieldNameId + '].pdf_url\" path=\"xmls[' + curFieldNameId + '].pdf_url\">pdf_url</label>';
     newitem += '<input id=\"xmls[' + curFieldNameId + '].pdf_url\" name=\"xmls[' + curFieldNameId + '].pdf_url\" placeholder=\"pdf_url\" required />';

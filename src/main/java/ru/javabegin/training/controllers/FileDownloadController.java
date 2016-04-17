@@ -17,8 +17,8 @@ public class FileDownloadController {
     @RequestMapping(value = "/download", method = RequestMethod.GET)
     public void download(HttpServletResponse response) throws IOException {
 
-//        File file = new File("/home/sersaf/proxy.xml");
-        File file = new File("/Users/sergejsafonov/proxy.xml");
+        File file = new File("/home/sersaf/Rolex_.xml");
+//        File file = new File("/Users/sergejsafonov/proxy.xml");
         InputStream is = new FileInputStream(file);
 
         // MIME type of the file

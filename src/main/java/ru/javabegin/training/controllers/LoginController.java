@@ -13,6 +13,7 @@ import org.springframework.ui.Model;
 import org.springframework.util.Assert;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
 
 import ru.javabegin.training.objects.*;
@@ -28,15 +29,14 @@ public class LoginController {
 	private static final Logger logger = LoggerFactory.getLogger(LoginController.class);
 	private static List<KantarXml> kantarXmls = new ArrayList<KantarXml>();
 	static {
-		kantarXmls.add(new KantarXml("12", "Elle","5","24-02","124","info","title","body","summury","pdf",
-				"123","Russia","1994-02-24"));
-//		kantarXmls.add(new KantarXml("12", "Elle","5","24-02","124","info","title","body","summury","pdf",
-//				"","",""));
+		kantarXmls.add(new KantarXml("12", "","","March 2016","","","","","","pdf",
+				"181914","Russia","1994-02-24"));
+
 	}
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public ModelAndView main() {
-
+	public ModelAndView main( SessionStatus sesion) {
+//		sesion.setComplete();
 		KantarXmlForm kantarXmlForm = new KantarXmlForm();
 		kantarXmlForm.setXmls(kantarXmls);
 
@@ -46,29 +46,18 @@ public class LoginController {
 
 	@RequestMapping(value = "/save", method = RequestMethod.POST)
 	public ModelAndView save(KantarXmlForm kantarXmlForm) {
-//		System.out.println(kantarXmlForm);
-//		System.out.println(kantarXmlForm.getXmls());
-		List<KantarXml> xmls = kantarXmlForm.getXmls();
-
-		if(null != xmls && xmls.size() > 0) {
-			LoginController.kantarXmls = xmls;
-			for (KantarXml kantarXml : xmls) {
-				kantarXmlForm.setXmls(xmls);
-				System.out.printf("%s \t %s \n", kantarXml.getId(), kantarXml.getSource());
-			}
-		}
-
 		return new ModelAndView("show_kantar", "kantarXmlForm", kantarXmlForm);
 	}
 
 	@RequestMapping(value = "/xmlgen", method = RequestMethod.POST)
-	public ModelAndView xmlgen(@ModelAttribute("kantarXmlForm") KantarXmlForm kantarXmlForm) throws TransformerException, IOException {
+	public ModelAndView xmlgen(@ModelAttribute("kantarXmlForm") KantarXmlForm kantarXmlForm)
+			throws TransformerException, IOException {
+
 
 		for (int i = 0; i < kantarXmlForm.getXmls().size(); i++) {
-			ConstructorsForXML constructorsForXML = new ConstructorsForXML(kantarXmlForm);
+			new ConstructorsForXML(kantarXmlForm);
 
 		}
-
 		return new ModelAndView("show_xml", "kantarXmlForm", kantarXmlForm);
 
 	}

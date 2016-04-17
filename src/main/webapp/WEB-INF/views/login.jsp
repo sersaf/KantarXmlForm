@@ -22,7 +22,7 @@
 <form:form class="contact_form" method="post" action="save" modelAttribute="kantarXmlForm">
 
         <h2>Kantar XML Form</h2>
-        <span class="required_notification">* Denotes Required Field</span>
+        <span class="required_notification">*Обязательные поля для заполнения</span>
 
         <div id="set">
                 <form:label for="xmls[0].order_id" path="xmls[0].order_id">order_id</form:label>
@@ -74,7 +74,7 @@
 
 
                 <form:label for="xmls[${status.index}].summary" path="xmls[${status.index}].summary"></form:label>
-                <textarea id="xmls[${status.index}].summary" name="xmls[${status.index}].summary"  placeholder="summary" cols="30" rows="3" required >${kantarXml.summary}</textarea>
+                <textarea id="xmls[${status.index}].summary" name="xmls[${status.index}].summary"  placeholder="summary" cols="30" rows="3" >${kantarXml.summary}</textarea>
 
 
                 <form:label for="xmls[${status.index}].pdf_url" path="xmls[${status.index}].pdf_url">pdf_url</form:label>

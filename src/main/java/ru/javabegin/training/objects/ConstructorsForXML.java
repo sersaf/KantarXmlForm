@@ -30,23 +30,6 @@ public class ConstructorsForXML {
      * Запись настроек в XML файл
      */
     //<NEWS>
-//<order_id>181914</order_id>
-//<country>Russia</country>
-//<date>18.03.2016</date>
-
-//<Article>
-//<id>mywatch</id>
-//<source></source>
-//<issue></issue>
-//<date_issue>March 2016</date_issue>
-//<page></page>
-//<info></info>
-//<title></title>
-//<body></body>
-//<summary></summary>
-//<pdf_url>www_mywatch_1603-2.pdf</pdf_url>
-//</Article>
-//</NEWS>
 
     public void WriteParamXML(List<KantarXml> xmls) throws TransformerException, IOException {
 
@@ -121,6 +104,7 @@ public class ConstructorsForXML {
         Transformer t=TransformerFactory.newInstance().newTransformer();
         t.setOutputProperty(OutputKeys.METHOD, "xml");
         t.setOutputProperty(OutputKeys.INDENT, "yes");
-        t.transform(new DOMSource(doc), new StreamResult(new FileOutputStream("/Users/sergejsafonov/proxy.xml")));
+//        t.transform(new DOMSource(doc), new StreamResult(new FileOutputStream("/Users/sergejsafonov/proxy.xml")));
+        t.transform(new DOMSource(doc), new StreamResult(new FileOutputStream("/home/sersaf/Rolex_.xml")));
     }
 }

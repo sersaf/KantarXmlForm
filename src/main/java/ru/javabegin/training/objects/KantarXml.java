@@ -1,6 +1,8 @@
 package ru.javabegin.training.objects;
 
-public class KantarXml {
+import java.io.Serializable;
+
+public class KantarXml implements Serializable {
     private String id;
 
     private String source;
